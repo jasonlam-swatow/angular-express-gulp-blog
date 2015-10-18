@@ -1,10 +1,12 @@
 # Angular + Express Blog Seed
 
+[中文版 README 在此](#安裝嚮導)
+
 A simple blog application built with Node, Express and Angular. It realizes CRUD operations via HTTP simulations so as to meet with a sort of RESTful architecture.
 
 As for styles and layouts, a Bootstrap theme called [Flatly](https://bootswatch.com/flatly/) is used.
 
-As described, this is a seed project. MongoDB, Angular form validation and Gulp workflows may be added in the future - or not. Well, it's a seed project, and I am not interested in jiggle it around anymore. I may use the other techs in other projects.
+As described, this is a seed project. MongoDB, Angular form validation and Gulp workflows may be added in the future - or not. Well, it's a seed project, and I am not interested in jiggle it around anymore. I may use the other techs in further projects.
 
 In addition, this is a SPA (**S**ingle **P**age **A**pplication), you can access to all its views and functionalities without redirecting.
 
@@ -35,6 +37,8 @@ Right now it uses hard coded fake data. But there is a good chance that [MongoDB
 
 1. Basic front-end functionalities such as routes, dynamic views, data bindings and Ajax CRUD are fulfilled via AngularJS.
 2. Uses Jade as client-side view templates. While it seems a bit overkill in here, I tend to choose Jade over EJS which was mysterically and confusingly designed.
+
+*** 
 
 以 Node、Express 及 Angular 搭建的簡易部落格，前後端合作用 HTTP 模擬增刪改查（CRUD）操作，實現了 RESTful 架構。
 
