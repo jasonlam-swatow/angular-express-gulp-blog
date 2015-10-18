@@ -29,7 +29,7 @@
 
 #### 數據庫
 
-現時採用硬編碼的僞數據，但會把 [MongoDB] 的整合提上日程。
+現時採用硬編碼的僞數據，但會把 [MongoDB](https://github.com/mattpetrie/React-Node-Project-Seed/blob/master/www.mongodb.org) 的整合提上日程。
 
 ### 前端架構
 
