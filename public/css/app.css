@@ -1,0 +1,25 @@
+/* app css stylesheet */
+
+.btn {
+  margin-right: 1%;
+}
+
+.panel h3 {
+  margin-top   : 0;
+  margin-bottom: 0;
+  font-size    : 20px;
+}
+
+.panel .btn {
+  float: right;
+}
+
+.read-post .panel-body {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.delete-post {
+  display: block;
+  top: 50%;
+}

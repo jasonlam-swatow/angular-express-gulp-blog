@@ -1,0 +1,24 @@
+div.row
+  div.col-lg-12
+    div.alert.alert-warning
+      i.fa.fa-bullhorn
+      &nbsp;現總共有 {{posts.length}} 篇文章。請即賜閱！
+
+div.row
+  div.col-lg-4(ng-repeat='post in posts', ng-init='colors')
+    div.panel.panel-primary
+      div.panel-heading
+        h3 {{post.title}}
+      div.panel-body
+        {{post.text}}
+        p
+          a.btn.btn-danger.btn-xs(href='/deletePost/{{post.id}}')
+            i.fa.fa-trash
+            &nbsp;移除
+          a.btn.btn-warning.btn-xs(href='/editPost/{{post.id}}')
+            i.fa.fa-pencil
+            &nbsp;編輯
+          a.btn.btn-info.btn-xs(href='/readPost/{{post.id}}')
+            i.fa.fa-ellipsis-h
+            &nbsp;更多
+

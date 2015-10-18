@@ -1,0 +1,17 @@
+div.row
+  div.col-lg-6.col-lg-offset-3
+    div.modal.delete-post
+      div.modal-dialog
+        div.modal-content
+          div.modal-header
+            button(ng-click='home()', data-dismiss='modal').close x
+            h4.modal-title {{post.title}}
+          div.modal-body
+            p 你確定要移除此篇文章嗎？
+          div.modal-footer
+            button(ng-click='deletePost()').btn.btn-danger
+              i.fa.fa-check
+              &nbsp;是！
+            button(ng-click='home()').btn.btn-warning
+              i.fa.fa-times
+              &nbsp;才不！

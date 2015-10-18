@@ -1,0 +1,21 @@
+div.row
+  div.col-lg-10.col-lg-offset-1
+    div.well
+      form.form-horizontal
+        fieldset
+          legend
+            i.fa.fa-pencil-square-o
+            &nbsp;編輯文章
+          div.form-group
+            label(for='title').col-lg-2.control-label 標題：
+            div.col-lg-10
+              input(ng-model='form.title', name='title', type='text', required).form-control
+          div.form-group
+            label(for='content').col-lg-2.control-label 內容：
+            div.col-lg-10
+              textarea(ng-model='form.text', name='content', cols='50', rows='15', required).form-control
+          div.form-group
+            div.col-lg-10.col-lg-offset-2
+              button(ng-click='editPost()').btn.btn-success
+                i.fa.fa-send
+                &nbsp;發佈
