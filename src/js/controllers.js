@@ -1,5 +1,3 @@
-'use strict';
-
 /* Controllers */
 
 function IndexCtrl($scope, $http) {
