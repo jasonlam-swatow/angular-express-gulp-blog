@@ -21,7 +21,9 @@ In addition, this is a SPA (**S**ingle **P**age **A**pplication), you can access
 
 ### Build Tools
 
-For now, it does not have any build tools under development or production environment. But [Gulp](http://gulpjs.com/) may be added.
+- [x] Uses [Gulp](http://gulpjs.com/) to process scripts, stylesheets and images.
+- [ ] npm `require` Angular with Browserify bundler.
+- [ ] Sass preprocessor.
 
 ### Server-Side Architecture
 
@@ -38,7 +40,7 @@ Right now it uses hard coded fake data. But there is a good chance that [MongoDB
 1. Basic front-end functionalities such as routes, dynamic views, data bindings and Ajax CRUD are fulfilled via AngularJS.
 2. Uses Jade as client-side view templates. While it seems a bit overkill in here, I tend to choose Jade over EJS which was mysterically and confusingly designed.
 
-*** 
+***
 
 以 Node、Express 及 Angular 搭建的簡易部落格，前後端合作用 HTTP 模擬增刪改查（CRUD）操作，實現了 RESTful 架構。
 
@@ -72,7 +74,7 @@ Right now it uses hard coded fake data. But there is a good chance that [MongoDB
 
 #### 數據庫
 
-現時採用硬編碼的僞數據，但會把 [MongoDB](http://www.mongodb.org) 的整合提上日程。
+現時採用硬編碼的僞數據（但可能會把 [MongoDB](http://www.mongodb.org) 的整合提上日程）。
 
 ### 前端架構
 
