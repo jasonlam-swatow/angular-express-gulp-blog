@@ -173,35 +173,96 @@ b.current&&b.current.locals,a=k&&k.$template;if(a){r();g=l.$new();f=m.clone();f.
 /*
 //@ sourceMappingURL=angular-route.min.js.map
 */
+'use strict';
+
 // Declare app level module which depends on filters, and services
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
         templateUrl: 'partials/index',
-        controller: IndexCtrl
+        controller: 'IndexCtrl'
       }).
       when('/addPost', {
         templateUrl: 'partials/addPost',
-        controller: AddPostCtrl
+        controller: 'AddPostCtrl'
       }).
       when('/readPost/:id', {
         templateUrl: 'partials/readPost',
-        controller: ReadPostCtrl
+        controller: 'ReadPostCtrl'
       }).
       when('/editPost/:id', {
         templateUrl: 'partials/editPost',
-        controller: EditPostCtrl
+        controller: 'EditPostCtrl'
       }).
       when('/deletePost/:id', {
         templateUrl: 'partials/deletePost',
-        controller: DeletePostCtrl
+        controller: 'DeletePostCtrl'
       }).
       otherwise({
         redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
   }]);
+/* Controllers */
+
+function IndexCtrl($scope, $http) {
+  $http.get('/api/posts').
+    success(function (data, status, headers, config) {
+      $scope.posts = data.posts;
+    });
+}
+
+function AddPostCtrl($scope, $http, $location) {
+  $scope.form = {};
+  $scope.submitPost = function () {
+    $http.post('/api/post', $scope.form).
+      success(function (data) {
+        $location.path('/');
+      });
+  };
+}
+
+function ReadPostCtrl($scope, $http, $routeParams) {
+  $http.get('/api/post/' + $routeParams.id).
+    success(function (data) {
+      $scope.post = data.post;
+    });
+}
+
+function EditPostCtrl($scope, $http, $location, $routeParams) {
+  $scope.form = {};
+  $http.get('/api/post/' + $routeParams.id).
+    success(function (data) {
+      $scope.form = data.post;
+    });
+
+  $scope.editPost = function () {
+    $http.put('/api/post/' + $routeParams.id, $scope.form).
+      success(function (data) {
+        $location.url('/readPost/' + $routeParams.id);
+      });
+  };
+}
+
+function DeletePostCtrl($scope, $http, $location, $routeParams) {
+  $http.get('/api/post/' + $routeParams.id).
+    success(function (data) {
+      $scope.post = data.post;
+    });
+
+  $scope.deletePost = function () {
+    $http.delete('/api/post/' + $routeParams.id).
+      success(function (data) {
+        $location.url('/');
+      });
+  };
+
+  $scope.home = function () {
+    $location.url('/');
+  };
+}
+
 angular.module('myApp.directives', []).
   directive('appVersion', ['version', function (version) {
     return function(scope, elm, attrs) {

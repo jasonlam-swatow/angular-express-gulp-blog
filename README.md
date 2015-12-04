@@ -59,7 +59,10 @@ Right now it uses hard coded fake data. But there is a good chance that [MongoDB
 
 ### 構建工具
 
-現時暫未有使用構建工具，但會把開發／生產環境下的 [Gulp](http://gulpjs.com/) 的整合提上日程。
+- [x] 使用 [Gulp](http://gulpjs.com/) 對 JS、CSS 和圖片進行處理。
+- [ ] npm `require` Angular 並用 Browserify 進行綑綁。
+- [ ] Sass 預處理，但鑑於自訂樣式實在少數，大有可能不會實現。
+
 
 ### 伺服端架構
 

@@ -32,16 +32,16 @@ gulp.task('build-js', function() {
   gulp.src(['src/js/lib/angular/angular.min.js',
             'src/js/lib/angular/angular-route.min.js',
             'src/js/app.js',
-            'src/js/constroller.js',
+            'src/js/controllers.js',
             'src/js/directives.js',
             'src/js/filters.js',
             'src/js/services.js' ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest(output.js))
-    .pipe(browserify({
-      insertGlobals : true,
-      debug : !gulp.env.production
-    }))
+    // .pipe(browserify({
+    //   insertGlobals : true,
+    //   debug : !gulp.env.production
+    // }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest(output.js));
